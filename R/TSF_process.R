@@ -14,6 +14,6 @@
 #' }
 TSF_process <- function(file_set, ncluster = 1, wait = TRUE, cache = TRUE, verbose = FALSE){
     exe <- system.file("exec/TSF_process.exe", package = "rTIMESAT")
-    cmd <- sprintf("%s %s %d", exe, file_set, ncluster)
-    system(cmd, wait = wait, show.output.on.console = verbose)
+    cmd <- sprintf("wine %s %s %d", exe, file_set, ncluster)
+    system(cmd, wait = wait)
 }
